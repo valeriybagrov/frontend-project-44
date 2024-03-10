@@ -2,14 +2,14 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "my first project",
-  "main": "index.js",
+  "main": "src/cli.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "module",
     "url": "git+https://github.com/valeriybagrov/frontend-project-44.git"
-
   },
   "author": "valeriybagrov",
   "license": "ISC",
@@ -19,5 +19,8 @@
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
-  "homepage": "https://github.com/valeriybagrov/frontend-project-44#readme"
+  "homepage": "https://github.com/valeriybagrov/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
