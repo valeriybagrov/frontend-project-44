@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync';
 import greeting from '../src/cli.js';
-import { checkAnswer, askThreeQuestions, getRandomInt } from '../src/index.js';
+import { makeQuestion, askThreeQuestions, getRandomInt } from '../src/index.js';
 
 const userName = greeting();
 
@@ -15,14 +14,18 @@ const findGcd = (...arrgs) => {
   return array[0];
 };
 
-const makeQuestion = () => {
+const generatePareOfNumber = () => {
   const firstInt = getRandomInt(1, 50);
   const secondInt = getRandomInt(1, 50);
-  console.log(`Question: ${firstInt} ${secondInt}`);
-
-  const answer = readlineSync.question('Your answer: ');
-  const corectAnswer = String(findGcd(firstInt, secondInt));
-  return checkAnswer(corectAnswer, answer, userName);
+  const question = `${firstInt} ${secondInt}`;
+  const correctAnswer = String(findGcd(firstInt, secondInt));
+  return { question, correctAnswer };
 };
 
-askThreeQuestions(makeQuestion, 'Find the greatest common divisor of given numbers.', userName);
+const callBackQuestion = () => makeQuestion(userName, generatePareOfNumber());
+
+askThreeQuestions(
+  callBackQuestion,
+  'Find the greatest common divisor of given numbers.',
+  userName,
+);
