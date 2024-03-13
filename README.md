@@ -2,5 +2,6 @@
 [![Actions Status](https://github.com/valeriybagrov/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/valeriybagrov/frontend-project-44/actions)
 
 ### Videos:
-1. [Brain-even ](https://asciinema.org/a/PSnlZIPkhpU8aAeZsalgflRR1)
+1. [Brain-even ](https://asciinema.org/a/L6w7Sg7Ok5R2rJ0KxszXlyz6Q)
 1. [Brain-calc ](https://asciinema.org/a/Vz73kMLuINULOph4TPOf67YxF)
+1. [Brain-gcd ](https://asciinema.org/a/OeEGgWkhJttfFe54kuwRSdQk3)
