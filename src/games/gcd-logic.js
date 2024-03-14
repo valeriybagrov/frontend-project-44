@@ -1,8 +1,8 @@
 import engine from '../engine.js';
 import getRandomInt from '../getRandomInt.js';
 
-const findGcd = (...arrgs) => {
-  const array = [...arrgs];
+const findGcd = (first, second) => {
+  const array = [first, second];
   while (array[0] !== array[1]) {
     array.sort((a, b) => a - b);
     array[1] -= array[0];

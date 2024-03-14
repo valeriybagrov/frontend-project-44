@@ -6,10 +6,21 @@ const getRandomOperator = () => {
   return operSign[getRandomInt(0, 2)];
 };
 
+const calculate = (first, second, operand) => {
+  switch (operand) {
+    case '+': return String(first + second);
+    case '-': return String(first - second);
+    case '*': return String(first * second);
+    default: return false;
+  }
+};
+
 const getExpression = () => {
   const sign = getRandomOperator();
-  const question = `${getRandomInt(1, 35)} ${sign} ${getRandomInt(1, 35)}`;
-  const correctAnswer = String(eval(question));
+  const firstInt = getRandomInt(1, 35);
+  const secondInt = getRandomInt(1, 35);
+  const question = `${firstInt} ${sign} ${secondInt}`;
+  const correctAnswer = calculate(firstInt, secondInt, sign);
 
   return { question, correctAnswer };
 };
