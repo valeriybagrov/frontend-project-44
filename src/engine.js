@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
-export default (messange, func) => {
+export default (message, func) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(messange);
+  console.log(message);
 
   // make 3 question and check answer
   for (let _ = 0; _ < 3; _ += 1) {
