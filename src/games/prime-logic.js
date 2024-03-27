@@ -1,31 +1,21 @@
 import engine from '../engine.js';
 import getRandomInt from '../getRandomInt.js';
 
-const getInt = () => {
+const isPrime = (int) => {
+  if (int < 2) return false;
+  for (let divider = 2; divider <= Math.sqrt(int); divider += 1) {
+    if (int % divider === 0) return false;
+  }
+  return true;
+};
+
+const makeQuestion = () => {
   const question = getRandomInt(1, 50);
-  let correctAnswer = 'no';
-
-  if (question === 2) {
-    correctAnswer = 'yes';
-    return { question, correctAnswer };
-  }
-
-  if (question % 2 !== 0) {
-    let upperLimit = Math.ceil(Math.sqrt(question));
-    upperLimit = upperLimit % 2 === 0 ? upperLimit - 1 : upperLimit;
-
-    for (let divider = upperLimit; divider > 1; divider -= 2) {
-      if (question % divider === 0) {
-        return { question, correctAnswer };
-      }
-    }
-    correctAnswer = 'yes';
-  }
-
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return { question, correctAnswer };
 };
 
 export default () => engine(
   'Answer "yes" if given number is prime. Otherwise answer "no".',
-  getInt,
+  makeQuestion,
 );
